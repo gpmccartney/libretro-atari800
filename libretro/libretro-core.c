@@ -228,7 +228,7 @@ static void update_variables(void)
 	 {
 	   Atari800_machine_type = Atari800_MACHINE_XLXE;
 	   MEMORY_ram_size = 64;
-	   Atari800_builtin_basic = TRUE;
+	   Atari800_builtin_basic = FALSE;
 	   Atari800_keyboard_leds = TRUE;
 	   Atari800_f_keys = TRUE;
 	   Atari800_jumper = FALSE;
