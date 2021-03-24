@@ -236,7 +236,7 @@ static void update_variables(void)
 	   Atari800_keyboard_detached = FALSE;
 	   Atari800_InitialiseMachine();
 	 }
-	   else if (strcmp(var.value, "600XL (64K)") == 0)
+	   else if (strcmp(var.value, "600XL (16K)") == 0)
 	 {
 	   Atari800_machine_type = Atari800_MACHINE_XLXE;
 	   MEMORY_ram_size = 16;
