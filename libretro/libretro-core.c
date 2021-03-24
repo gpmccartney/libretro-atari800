@@ -114,7 +114,7 @@ void retro_set_environment(retro_environment_t cb)
    struct retro_variable variables[] = {
      {
        "atari800_system",
-       "Atari System; 400/800 (OS B)|800XL (64K)|130XE (128K)|XEGS|5200",
+       "Atari System; 400/800 (OS B)|1200XL (64K)|600XL (16K)|800XL (64K)|130XE (128K)|XEGS|5200",
      },
      {
        "atari800_ntscpal",
@@ -224,7 +224,31 @@ static void update_variables(void)
 	   Atari800_keyboard_detached = FALSE;
 	   Atari800_InitialiseMachine();
 	 }
-       else if (strcmp(var.value, "800XL (64K)") == 0)
+       else if (strcmp(var.value, "1200XL (64K)") == 0)
+	 {
+	   Atari800_machine_type = Atari800_MACHINE_XLXE;
+	   MEMORY_ram_size = 64;
+	   Atari800_builtin_basic = TRUE;
+	   Atari800_keyboard_leds = TRUE;
+	   Atari800_f_keys = TRUE;
+	   Atari800_jumper = FALSE;
+	   Atari800_builtin_game = FALSE;
+	   Atari800_keyboard_detached = FALSE;
+	   Atari800_InitialiseMachine();
+	 }
+	   else if (strcmp(var.value, "600XL (64K)") == 0)
+	 {
+	   Atari800_machine_type = Atari800_MACHINE_XLXE;
+	   MEMORY_ram_size = 16;
+	   Atari800_builtin_basic = TRUE;
+	   Atari800_keyboard_leds = FALSE;
+	   Atari800_f_keys = FALSE;
+	   Atari800_jumper = FALSE;
+	   Atari800_builtin_game = FALSE;
+	   Atari800_keyboard_detached = FALSE;
+	   Atari800_InitialiseMachine();
+	 }
+	   else if (strcmp(var.value, "800XL (64K)") == 0)
 	 {
 	   Atari800_machine_type = Atari800_MACHINE_XLXE;
 	   MEMORY_ram_size = 64;
